@@ -34,10 +34,10 @@ netstat.on('close', (code) => {
 grep.stdout.on('data', (data) => {
   console.log(data.toString());
 
-  rl.question('Please select the pid of prosess to kill: ', async (answer) => {
+  rl.question('Please select the pid of process to kill: ', async (answer) => {
     try {
       await kill(answer);
-      console.log(`killed prosess: ${answer}`);
+      console.log(`killed process: ${answer}`);
     } catch(err) {
       throw new Error(err);
     } finally {
